@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Views.CalculatorPage"
              Title="CalculatorPage">
+
     <Grid 
         RowDefinitions="*,68,48,44,44,48,64,64,64,64"
         ColumnDefinitions="*,*,*,*,*">
@@ -39,7 +40,7 @@
             </Label>
         </Frame>
         
-        <!--Answer Area-->
+        <!--Answer Row-->
         <Grid
             ColumnDefinitions="Auto,*"
             Grid.Row="1"
@@ -51,8 +52,7 @@
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
                 Style="{StaticResource EqualsLabelStyle}"
-                Margin="16,0"
-                />
+                Margin="16,0"/>
 
             <Label 
                 Text="{Binding CalculatedResult, Mode=OneWay}"
@@ -74,7 +74,7 @@
             Margin="6,10,6,4"
             Style="{StaticResource ScientificOperatorButtonStyle}"
             Text="MEAN"/>
-        
+
         <Button 
             Grid.Row="2"
             Grid.Column="1"

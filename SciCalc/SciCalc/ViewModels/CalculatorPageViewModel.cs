@@ -1,8 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ViewModels
 {
@@ -36,7 +33,7 @@ namespace ViewModels
             if (isSciOpWaiting)
             {
                 InputText += ")";
-                isSciOpWaiting = false ;
+                isSciOpWaiting = false;
             }
 
             try
@@ -49,6 +46,7 @@ namespace ViewModels
             }
             catch (Exception ex)
             {
+
                 throw;
             }
         }
@@ -73,8 +71,8 @@ namespace ViewModels
                 {"ABS", "Abs"},
             };
 
-            var retString = inputText;
-            
+            var retString = InputText;
+
             foreach (var key in _opMapper.Keys)
             {
                 retString = retString.Replace(key, _opMapper[key]);
@@ -86,7 +84,7 @@ namespace ViewModels
         [RelayCommand]
         private void Backspace()
         {
-            if (InputText.Length > 0)
+            if (InputText.Length >0)
             {
                 InputText = InputText.Substring(0, InputText.Length - 1);
             }
@@ -95,7 +93,7 @@ namespace ViewModels
         [RelayCommand]
         private void NumberInput(string key)
         {
-            inputText += key;
+            InputText += key;
         }
 
         [RelayCommand]
@@ -123,8 +121,8 @@ namespace ViewModels
         [RelayCommand]
         private void ScientificOperator(string op)
         {
-            InputText += $" {op}(";
+            InputText += $"{op}(";
             isSciOpWaiting = true;
-        } 
+        }
     }
 }
