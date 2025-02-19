@@ -30,7 +30,7 @@ namespace MauiPlanets
             #endif
             });
 
-            MainPage = new StarPage();
+            MainPage = new StartPage();
         }
     }
 }
