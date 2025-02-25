@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:ViewModels"
              xmlns:models="clr-namespace:Models"
              x:DataType="vm:ProductsViewModel"
-             x:Class="MauiCRUD.MainPage">
+             x:Class="MauiCRUD.MainPage"
+             Title="SQLite CRUD operations">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{OnPlatform Default='+ Add Product', iOS='+'}"
@@ -21,7 +22,7 @@
                                HorizontalOptions="Center" />
             <Label Text="{Binding BusyText}"
                    VerticalOptions="Center"
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
         </VerticalStackLayout>
 
         <Label Grid.Row="0"
@@ -36,7 +37,7 @@
                             ItemsSource="{Binding Products}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="10"
-                                       Orientation="Vertical" />
+                                       Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Product">
@@ -53,7 +54,7 @@
                                    Grid.Column="0"
                                    Text="{Binding Price, StringFormat='Price: {0}'}"
                                    FontSize="12"
-                                   FontAttributes="Bold"/>
+                                   FontAttributes="Bold" />
 
                             <Button Grid.Row="0"
                                     Grid.Column="1"
@@ -65,7 +66,6 @@
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=SetOperatingProductCommand}"
                                     CommandParameter="{Binding .}"/>
 
-
                             <Button Grid.Row="1"
                                     Grid.Column="1"
                                     Text="Del"
@@ -75,7 +75,6 @@
                                     CornerRadius="2"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}"
                                     CommandParameter="{Binding Id}"/>
-
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -87,7 +86,7 @@
                                    FontSize="18"
                                    FontAttributes="Bold"
                                    HorizontalTextAlignment="Center"/>
-                            <Label Text="Try Creating a product from the form below"/>
+                            <Label Text="Try creating a product from the form below"/>
                         </VerticalStackLayout>
                     </ContentView>
                 </CollectionView.EmptyView>
@@ -101,18 +100,28 @@
                       Padding="10"
                       RowSpacing="10"
                       ColumnSpacing="10"
-                      BackgroundColor="#CCBFFA" >
+                      BackgroundColor="#CCBFFA">
                     <VerticalStackLayout Grid.Row="0"
                                          Grid.Column="0">
                         <Label Text="Name"/>
                         <Entry Text="{Binding OperatingProduct.Name}"
                                Placeholder="Product name"
                                Margin="0"
-                               BackgroundColor="#DAD1F9"/>
+                               BackgroundColor="#DAD1F9" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="0"
+                                         Grid.Column="1">
+                        <Label Text="Price"/>
+                        <Entry Text="{Binding OperatingProduct.Price}"
+                               Placeholder="Product price"
+                               Margin="0"
+                               BackgroundColor="#DAD1F9" 
+                               Keyboard="Numeric" />
                     </VerticalStackLayout>
 
                     <Button Grid.Row="1"
-                            Grid.Column="2"
+                            Grid.ColumnSpan="2"
                             Text="Update Product"
                             HorizontalOptions="Center"
                             VerticalOptions="End"
@@ -126,12 +135,10 @@
                                 <Setter Property="Text" Value="Create Product" />
                             </DataTrigger>
                         </Button.Triggers>
-                        
                     </Button>
                 </Grid>
             </VerticalStackLayout>
         </Grid>
-
     </Grid>
 
 </ContentPage>
