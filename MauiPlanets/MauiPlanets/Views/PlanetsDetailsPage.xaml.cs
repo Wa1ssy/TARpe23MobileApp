@@ -1,6 +1,6 @@
-using Models;
+using MauiPlanets.Models;
 
-namespace Views;
+namespace MauiPlanets.Views;
 
 public partial class PlanetsDetailsPage : ContentPage
 {

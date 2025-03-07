@@ -1,7 +1,7 @@
-using Models;
-using Services;
+using MauiPlanets.Models;
+using MauiPlanets.Services;
 
-namespace Views;
+namespace MauiPlanets.Views;
 
 public partial class PlanetsPage : ContentPage
 {
@@ -30,10 +30,9 @@ public partial class PlanetsPage : ContentPage
 		_ = MainContentGrid.TranslateTo(-this.Width * 0.5, this.Height * 0.1, AnimationDuration, Easing.CubicIn);
 		await MainContentGrid.ScaleTo(0.8, AnimationDuration);
 		_ = MainContentGrid.ScaleTo(0.8, AnimationDuration);
-	}
+    }
 
-
-    async void GridArea_Tapped(System.Object sender, System.EventArgs e)
+	async void GridArea_Tapped(System.Object sender, System.EventArgs e)
 	{
 		await CloseMenu();
 	}

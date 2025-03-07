@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Views.PlanetsDetailsPage"
-             Title="Planets Details">
+             x:Class="MauiPlanets.Views.PlanetsDetailsPage"
+             Title="PlanetsDetailsPage">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -47,13 +47,13 @@
             <VerticalStackLayout
                 Spacing="18">
 
-                <!--Planet image-->
+                <!--Planet Image-->
                 <Image
                     Source="{Binding HeroImage}"
                     Aspect="AspectFit"
                     HorizontalOptions="Fill"
                     HeightRequest="240"
-                    Margin="24,0" />
+                    Margin="24, 0" />
 
                 <!--Planet name-->
                 <Label 
@@ -92,7 +92,7 @@
                     Style="{StaticResource PlanetHeaderSubtitleStyle}"
                     Text="Gallery"/>
 
-                <CollectionView 
+                <CollectionView
                     Margin="0,-6,0,0"
                     HeightRequest="400"
                     WidthRequest="400"

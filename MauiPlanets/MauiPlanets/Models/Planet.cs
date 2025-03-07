@@ -1,4 +1,10 @@
-﻿namespace Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MauiPlanets.Models
 {
     public class Planet
     {
@@ -9,7 +15,6 @@
         public Color AccentColorStart { get; set; }
         public Color AccentColorEnd { get; set; }
         public List<string> Images { get; set; }
-
         public Brush Background
         {
             get

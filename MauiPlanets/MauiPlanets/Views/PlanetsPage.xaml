@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:Models"
-             x:Class="Views.PlanetsPage"
+             xmlns:models="clr-namespace:MauiPlanets.Models"
+             x:Class="MauiPlanets.Views.PlanetsPage"
              Title="PlanetsPage">
 
     <Grid
@@ -29,37 +29,37 @@
                 HorizontalOptions="End"
                 Spacing="20">
 
-                <Label 
+                <Label
                     Text="MENU"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 1 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 2 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 3 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 4 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 5 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-                <Label 
+                <Label
                     Text="Option 6 (with icon)"
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
@@ -71,7 +71,7 @@
         <Grid
             x:Name="MainContentGrid"
             Padding="24,52,24,0"
-            IgnoreSafeArea="{OnPlatform Android= False, iOS=True}"
+            IgnoreSafeArea="{OnPlatform Android=False, iOS=True}"
             BackgroundColor="{StaticResource PageBackgroundColor}"
             ColumnDefinitions="*, Auto"
             RowDefinitions="Auto,*">
@@ -90,7 +90,7 @@
                 <Label 
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     Text="The milky way galaxy" />
-                
+
             </VerticalStackLayout>
             
             <!--Profile pic-->
@@ -146,7 +146,6 @@
                         Padding="12,4"
                         BackgroundColor="#33CCCC"
                         Stroke="{StaticResource BorderColor}"
-                        HorizontalOptions="Fill"
                         Margin="0,0,24,0"
                         HeightRequest="48">
                         <Border.StrokeShape>
@@ -225,7 +224,7 @@
                                             VerticalOptions="Fill"
                                             HorizontalOptions="Fill" />
 
-                                        <Label 
+                                        <Label
                                             Grid.Row="1"
                                             Style="{StaticResource FeaturedPlanetHeaderStyle}"
                                             Text="{Binding Name}"
@@ -242,7 +241,7 @@
 
                     </CollectionView>
 
-                    <!--More Section-->
+                    <!--More Collection-->
                     <Label
                         Style="{StaticResource PageSubHeaderStyle}"
                         Margin="0,12,0,0">
